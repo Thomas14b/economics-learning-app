@@ -1,0 +1,193 @@
+{
+  "totalConcepts": 20,
+  "categories": {
+    "基礎概念": [
+      {
+        "id": 1,
+        "english": "Scarcity",
+        "chinese": "稀缺性",
+        "traditional": "稀缺性",
+        "definition": "社會拥有的資源是有限的，因此不能生產人们希望拥有的所有物品與服務。這是整個經濟學的基礎概念。",
+        "example": "时間、金錢、土地等資源都是有限的，但人的慾望是無限的，這就產生了稀缺性。",
+        "pronunciation": "skɛər.sɪ.ti"
+      },
+      {
+        "id": 2,
+        "english": "Opportunity Cost",
+        "chinese": "機會成本",
+        "traditional": "機會成本",
+        "definition": "為了得到某種東西所放棄的東西中價值最高的那一個。不是表面花費的成本，而是放棄的最佳選擇的價值。",
+        "example": "上大學的機會成本不是學费，而是這4年时間如果去工作能賺到的錢。",
+        "pronunciation": "ˌɒp.əˈtjuː.nɪ.ti kɒst"
+      },
+      {
+        "id": 3,
+        "english": "Supply and Demand",
+        "chinese": "供給與需求",
+        "traditional": "供給與需求",
+        "definition": "市場的基本力量。供給是生產者願意在特定價格下提供的商品數量；需求是消費者願意在特定價格下購買的商品數量。",
+        "example": "当需求增加而供給不變时，價格会上漲；当供給增加而需求不變时，價格会下降。",
+        "pronunciation": "səˈplaɪ ænd dɪˈmɑːnd"
+      },
+      {
+        "id": 4,
+        "english": "Marginal Cost",
+        "chinese": "邊际成本",
+        "traditional": "邊際成本",
+        "definition": "企業每多生產一單位產品所增加的成本。理性決策者会考慮邊际量。",
+        "example": "生產第101件衣服比第100件衣服多花的布料、人工費用就是邊际成本。",
+        "pronunciation": "ˈmɑː.dʒɪ.nəl kɒst"
+      },
+      {
+        "id": 5,
+        "english": "Incentives",
+        "chinese": "激励",
+        "traditional": "激勵",
+        "definition": "引起一個人做出某種行為的東西，比如懲罰或獎勵的預期。人们会对激励做出反應。",
+        "example": "安全帶法案降低了司機魯莽駕駛的懲罰，結果司機開車更魯莽，事故反而增加。",
+        "pronunciation": "ɪnˈsen.tɪvz"
+      }
+    ],
+    "微觀經濟學": [
+      {
+        "id": 6,
+        "english": "Market Failure",
+        "chinese": "市場失灵",
+        "traditional": "市場失靈",
+        "definition": "市場本身不能有效配置資源的情况，需要政府干预。",
+        "example": "空气污染是负外部性的例子，市場无法解决，需要政府干预。",
+        "pronunciation": "ˈmɑː.kɪt ˈfeɪ.ljə"
+      },
+      {
+        "id": 7,
+        "english": "Externalities",
+        "chinese": "外部性",
+        "traditional": "外部性",
+        "definition": "一個人的行為对旁观者福利的影响，而对這种影响不付报酬又得不到报酬。",
+        "example": "工厂排污是负外部性，研发新技术是正外部性。",
+        "pronunciation": "ˌek.stɜːˈnæl.ɪ.tiz"
+      },
+      {
+        "id": 8,
+        "english": "Monopoly",
+        "chinese": "垄断",
+        "traditional": "壟斷",
+        "definition": "一個企業完全控制一個行业，是唯一的供应商。",
+        "example": "公用事业如水、电供应通常是垄断市場。",
+        "pronunciation": "məˈnɒp.əl.i"
+      },
+      {
+        "id": 9,
+        "english": "Elasticity",
+        "chinese": "弹性",
+        "traditional": "彈性",
+        "definition": "商品需求量对價格、收入等因素变动的敏感程度。",
+        "example": "奢侈品通常有弹性需求（價格涨了人们就少买），必需品通常是刚性需求（再贵也得买）。",
+        "pronunciation": "ˌiː.lækˈstɪs.ɪ.ti"
+      },
+      {
+        "id": 10,
+        "english": "Comparative Advantage",
+        "chinese": "比较优勢",
+        "traditional": "比較優勢",
+        "definition": "一個国家/經濟體在生產某種商品时機會成本较低的能力。",
+        "example": "中国生產纺织品有比较优勢，美国生產高科技產品有比较优勢。",
+        "pronunciation": "kəmˈpær.ə.tɪv ədˈvɑːn.tɪdʒ"
+      }
+    ],
+    "宏觀經濟學": [
+      {
+        "id": 11,
+        "english": "GDP",
+        "chinese": "国內生產总值",
+        "traditional": "國內生產總值",
+        "definition": "一個国家在一定时期內生產的所有最终商品和服務的市場價值。",
+        "example": "GDP = 消费 + 投资 + 政府購買 + 净出口。",
+        "pronunciation": "ˌdʒiː.diːˈpiː"
+      },
+      {
+        "id": 12,
+        "english": "Inflation",
+        "chinese": "通货膨胀",
+        "traditional": "通貨膨脹",
+        "definition": "货币发多了，錢不值錢了。温和的通胀(2%左右)通常被认為是經濟健康的表现。",
+        "example": "CPI同比上漲2.5%，表示今年买同樣的菜、肉、房租，比去年多花2.5%的錢。",
+        "pronunciation": "ɪnˈfleɪ.ʃən"
+      },
+      {
+        "id": 13,
+        "english": "Unemployment Rate",
+        "chinese": "失业率",
+        "traditional": "失業率",
+        "definition": "失业人口占劳动人口（有劳动能力且願意工作的人群）的比例。",
+        "example": "失业率5%，表示100個劳动者中，有5人失业。",
+        "pronunciation": "ˌʌn.ɪmˈplɔɪ.mənt reɪt"
+      },
+      {
+        "id": 14,
+        "english": "Fiscal Policy",
+        "chinese": "财政政策",
+        "traditional": "財政政策",
+        "definition": "政府通過改变購買支出、转移支付规模和税收來调节总需求的手段。",
+        "example": "扩张性政策：降低税收，增加开支；紧缩性政策：增加税收，减少开支。",
+        "pronunciation": "ˈfɪs.kəl ˈpɒl.ə.si"
+      },
+      {
+        "id": 15,
+        "english": "Monetary Policy",
+        "chinese": "货币政策",
+        "traditional": "貨幣政策",
+        "definition": "中央银行通過调节货币供应量、利率等工具调控宏觀經濟的政策。",
+        "example": "降息刺激企業投资和居民消费，加息则抑制通胀。",
+        "pronunciation": "ˈmʌn.ɪ.tri ˈpɒl.ə.si"
+      }
+    ],
+    "國際貿易": [
+      {
+        "id": 16,
+        "english": "Free Trade",
+        "chinese": "自由貿易",
+        "traditional": "自由貿易",
+        "definition": "不使用关税和非关税手段限制國際貿易的主张和政策。",
+        "example": "WTO推动全球自由貿易，降低关税壁垒。",
+        "pronunciation": "friː treɪd"
+      },
+      {
+        "id": 17,
+        "english": "Tariff",
+        "chinese": "关税",
+        "traditional": "關稅",
+        "definition": "一個国家对进出口物品征收的税。是最古老的税种之一。",
+        "example": "进口汽车需要缴纳关税，增加了进口成本。",
+        "pronunciation": "ˈtær.ɪf"
+      },
+      {
+        "id": 18,
+        "english": "Exchange Rate",
+        "chinese": "汇率",
+        "traditional": "匯率",
+        "definition": "一种货币與另一种货币相互交换的比率。由外汇市場供求决定。",
+        "example": "人民币对美元汇率上升，意味著人民币升值，同樣多的人民币可以换到更多的美元。",
+        "pronunciation": "ɪksˈtʃeɪndʒ reɪt"
+      },
+      {
+        "id": 19,
+        "english": "Balance of Trade",
+        "chinese": "貿易平衡",
+        "traditional": "貿易平衡",
+        "definition": "一個国家出口总额與进口总额的差额。",
+        "example": "貿易顺差意味著出口大於进口，貿易逆差意味著进口大於出口。",
+        "pronunciation": "ˈbæl.əns əv treɪd"
+      },
+      {
+        "id": 20,
+        "english": "Protectionism",
+        "chinese": "貿易保护主义",
+        "traditional": "貿易保護主義",
+        "definition": "主张通過关税和非关税壁垒阻止外国產品进入本国市場，以保护本国产业。",
+        "example": "对进口钢铁征收高关税以保护本国钢铁产业。",
+        "pronunciation": "prəˈtek.ʃən.ɪ.zəm"
+      }
+    ]
+  }
+}

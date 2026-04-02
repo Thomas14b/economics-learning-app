@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>經濟學概念學習系統 - 繁體中文版</title>
+    <style>
+        /* 样式保持不变，但文字已转换为繁体 */
+        body {
+            font-family: 'Microsoft JhengHei', '微軟正黑體', sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding: 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-radius: 10px;
+        }
+        .card {
+            background: white;
+            border-radius: 10px;
+            padding: 30px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        .controls {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin: 20px 0;
+        }
+        button {
+            padding: 10px 20px;
+            background: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover {
+            background: #45a049;
+        }
+        .concept-title {
+            font-size: 24px;
+            color: #333;
+            margin-bottom: 10px;
+        }
+        .concept-chinese {
+            font-size: 20px;
+            color: #666;
+            margin-bottom: 15px;
+        }
+        .section {
+            margin-bottom: 15px;
+        }
+        .section-title {
+            font-weight: bold;
+            color: #444;
+            margin-bottom: 5px;
+        }
+        .footer {
+            text-align: center;
+            margin-top: 30px;
+            color: #666;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>經濟學概念學習系統</h1>
+        <p>繁體中文版 - 專業經濟學教育工具</p>
+    </div>
+    
+    <div class="controls">
+        <button id="prevBtn">← 上一個</button>
+        <button id="randomBtn">🎲 隨機顯示</button>
+        <button id="nextBtn">下一個 →</button>
+        <button id="speakBtn">🔊 播放發音</button>
+    </div>
+    
+    <div class="card" id="conceptCard">
+        <div class="concept-title" id="englishTerm">加載中...</div>
+        <div class="concept-chinese" id="chineseTerm"></div>
+        <div class="section">
+            <div class="section-title">釋義：</div>
+            <div id="definition"></div>
+        </div>
+        <div class="section">
+            <div class="section-title">示例：</div>
+            <div id="example"></div>
+        </div>
+        <div class="section">
+            <div class="section-title">發音：</div>
+            <div id="pronunciation"></div>
+        </div>
+    </div>
+    
+    <div class="footer">
+        <p>當前進度：<span id="progress">0/0</span></p>
+        <p>使用快捷鍵：← → 切換卡片，空格鍵播放發音</p>
+        <p>© 2026 經濟學概念學習系統 - 繁體中文版</p>
+    </div>
+
+    <script>
+        // 概念數據
+        let concepts = [];
+        let currentIndex = 0;
+        
+        // 加載概念數據
+        async function loadConcepts() {
+            try {
+                const response = await fetch('concepts.json');
+                const data = await response.json();
+                
+                // 展平所有概念
+                concepts = [];
+                for (const category in data.categories) {
+                    concepts.push(...data.categories[category]);
+                }
+                
+                console.log(`加載了 ${concepts.length} 個經濟學概念`);
+                updateDisplay();
+            } catch (error) {
+                console.error('加載數據失敗:', error);
+                alert('無法加載概念數據，請檢查文件是否存在');
+            }
+        }
+        
+        // 更新顯示
+        function updateDisplay() {
+            if (concepts.length === 0) {
+                document.getElementById('englishTerm').textContent = '沒有可用的概念';
+                return;
+            }
+            
+            const concept = concepts[currentIndex];
+            
+            document.getElementById('englishTerm').textContent = concept.english;
+            document.getElementById('chineseTerm').textContent = concept.traditional || concept.chinese;
+            document.getElementById('definition').textContent = concept.definition;
+            document.getElementById('example').textContent = concept.example;
+            document.getElementById('pronunciation').textContent = concept.pronunciation || '無發音標注';
+            document.getElementById('progress').textContent = `${currentIndex + 1}/${concepts.length}`;
+        }
+        
+        // 導航功能
+        function nextConcept() {
+            if (concepts.length === 0) return;
+            currentIndex = (currentIndex + 1) % concepts.length;
+            updateDisplay();
+        }
+        
+        function prevConcept() {
+            if (concepts.length === 0) return;
+            currentIndex = (currentIndex - 1 + concepts.length) % concepts.length;
+            updateDisplay();
+        }
+        
+        function randomConcept() {
+            if (concepts.length === 0) return;
+            currentIndex = Math.floor(Math.random() * concepts.length);
+            updateDisplay();
+        }
+        
+        // 發音功能
+        function speakConcept() {
+            if (concepts.length === 0) return;
+            
+            const concept = concepts[currentIndex];
+            const utterance = new SpeechSynthesisUtterance(concept.english);
+            utterance.lang = 'en-US';
+            utterance.rate = 0.9;
+            utterance.pitch = 1;
+            
+            // 添加簡單的動畫效果
+            const btn = document.getElementById('speakBtn');
+            const originalText = btn.textContent;
+            btn.textContent = '🔊 播放中...';
+            btn.disabled = true;
+            
+            utterance.onend = function() {
+                btn.textContent = originalText;
+                btn.disabled = false;
+            };
+            
+            window.speechSynthesis.speak(utterance);
+        }
+        
+        // 快捷鍵支持
+        function setupKeyboardShortcuts() {
+            document.addEventListener('keydown', function(e) {
+                if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') {
+                    return;
+                }
+                
+                switch(e.key) {
+                    case 'ArrowLeft':
+                        e.preventDefault();
+                        prevConcept();
+                        break;
+                    case 'ArrowRight':
+                        e.preventDefault();
+                        nextConcept();
+                        break;
+                    case ' ':
+                    case 'Spacebar':
+                        e.preventDefault();
+                        speakConcept();
+                        break;
+                    case 'r':
+                    case 'R':
+                        if (e.ctrlKey) {
+                            e.preventDefault();
+                            randomConcept();
+                        }
+                        break;
+                }
+            });
+        }
+        
+        // 初始化
+        document.addEventListener('DOMContentLoaded', function() {
+            loadConcepts();
+            setupKeyboardShortcuts();
+            
+            // 綁定按鈕事件
+            document.getElementById('prevBtn').addEventListener('click', prevConcept);
+            document.getElementById('nextBtn').addEventListener('click', nextConcept);
+            document.getElementById('randomBtn').addEventListener('click', randomConcept);
+            document.getElementById('speakBtn').addEventListener('click', speakConcept);
+        });
+    </script>
+</body>
+</html>
